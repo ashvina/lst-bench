@@ -12,13 +12,10 @@ fi
 export SPARK_MASTER_HOST=$1
 export SPARK_HOME=/home/$USER/spark
 export HADOOP_HOME=/home/$USER/hadoop
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+export JAVA_HOME=$JDK_HOME
 export DATA_STORAGE_ACCOUNT=$2
 export DATA_STORAGE_ACCOUNT_SHARED_KEY=$3
 
-# Update dependencies and install packages
-sudo apt update -y
-sudo apt install -y openjdk-8-jdk wget
 
 # Install Hadoop
 rm -rf hadoop-3.3.1
@@ -27,10 +24,10 @@ tar -xzf hadoop-3.3.1.tar.gz
 ln -sf $(pwd)/hadoop-3.3.1 $HADOOP_HOME
 
 # Install Spark
-rm -rf spark-3.3.1-bin-hadoop3
-wget -nv -N https://archive.apache.org/dist/spark/spark-3.3.1/spark-3.3.1-bin-hadoop3.tgz
-tar -xf spark-3.3.1-bin-hadoop3.tgz
-ln -sf $(pwd)/spark-3.3.1-bin-hadoop3 $SPARK_HOME
+rm -rf spark-$SPARK_VERSION-bin-hadoop3
+wget -nv -N https://archive.apache.org/dist/spark/spark-$SPARK_VERSION/spark-$SPARK_VERSION-bin-hadoop3.tgz
+tar -xf spark-$SPARK_VERSION-bin-hadoop3.tgz
+ln -sf $(pwd)/spark-$SPARK_VERSION-bin-hadoop3 $SPARK_HOME
 
 # Configure Spark
 sudo mkdir -p /opt/spark-events
