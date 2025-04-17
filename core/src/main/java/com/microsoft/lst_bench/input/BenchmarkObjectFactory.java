@@ -101,6 +101,13 @@ public class BenchmarkObjectFactory {
     InternalLibrary internalLibrary = parseLibrary(library);
     ImmutableWorkloadExec workloadExec =
         createWorkloadExec(workload, internalLibrary, experimentConfig);
+
+    // print experiment config parameters
+    System.out.println("Experiment Configuration Parameters:");
+    experimentConfig
+        .getParameterValues()
+        .forEach((key, value) -> System.out.println(key + ": " + value));
+
     return new BenchmarkConfig(
         experimentConfig.getId(),
         experimentConfig.getRepetitions(),
