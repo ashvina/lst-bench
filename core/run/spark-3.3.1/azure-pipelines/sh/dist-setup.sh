@@ -9,9 +9,6 @@ if [ -z "${SPARK_HOME}" ]; then
     exit 1
 fi
 
-# Install packages
-sudo apt install -y net-tools nmap
-
 # Configure hosts
 my_ip=$(/sbin/ifconfig eth0 | sed -n 's/ *inet [^0-9]*\([0-9\.]\+\).*/\1/p')
 ip_range=${my_ip%.*}.*
