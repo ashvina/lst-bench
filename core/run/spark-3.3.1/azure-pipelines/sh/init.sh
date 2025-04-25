@@ -10,12 +10,13 @@ if [ -z "${USER}" ]; then
 fi
 
 export SPARK_MASTER_HOST=$1
-export SPARK_HOME=/home/$USER/spark
-export HADOOP_HOME=/home/$USER/hadoop
+export SPARK_HOME=$HOME/spark
+export HADOOP_HOME=$HOME/hadoop
 export JAVA_HOME=$JDK_HOME
 export DATA_STORAGE_ACCOUNT=$2
 export DATA_STORAGE_ACCOUNT_SHARED_KEY=$3
 
+printenv
 
 # Install Hadoop
 rm -rf hadoop-3.3.1
@@ -31,12 +32,8 @@ ln -sf $(pwd)/spark-$SPARK_VERSION-bin-hadoop3 $SPARK_HOME
 sudo mkdir -p /opt/spark-events
 sudo chown $USER:$USER /opt/spark-events/
 
-cp $SPARK_HOME/conf/spark-env.sh.template $SPARK_HOME/conf/spark-env.sh
-cp $SPARK_HOME/conf/spark-defaults.conf.template $SPARK_HOME/conf/spark-defaults.conf
-
-envsubst < "spark-defaults.conf.template" > "$SPARK_HOME/conf/spark-defaults.conf"
-
-envsubst < "spark-env.sh.template" > "$SPARK_HOME/conf/spark-env.sh"
+cp $HOME/spark-$SPARK_VERSION/spark-env.sh $SPARK_HOME/conf/spark-env.sh
+cp $HOME/spark-$SPARK_VERSION/spark-defaults.conf $SPARK_HOME/conf/spark-defaults.conf
 
 sudo mkdir -p /mnt/local_resource/
 sudo mkdir -p /mnt/local_resource/data/

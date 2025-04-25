@@ -1,10 +1,10 @@
 spark.master                                                                  spark://${SPARK_MASTER_HOST}:7077
 spark.driver.cores                                                            4
-spark.driver.memory                                                           45992m
+spark.driver.memory                                                           4g
 spark.executor.cores                                                          7
-spark.executor.memory                                                         11754m
+spark.executor.memory                                                         11g
 spark.memory.offHeap.enabled                                                  true
-spark.memory.offHeap.size                                                     36974886912
+spark.memory.offHeap.size                                                     20g
 spark.eventLog.enabled                                                        true
 spark.eventLog.dir                                                            file:/opt/spark-events
 spark.history.fs.logDirectory                                                 file:/opt/spark-events
