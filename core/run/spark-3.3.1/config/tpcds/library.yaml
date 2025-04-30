@@ -195,7 +195,7 @@ task_templates:
   - core/run/spark-3.3.1/scripts/tpcds/single_user/query97.sql
   - core/run/spark-3.3.1/scripts/tpcds/single_user/query98.sql
   - core/run/spark-3.3.1/scripts/tpcds/single_user/query99.sql
-  permutation_orders_path: run/auxiliary/tpcds/single_user/permutation_orders/
+  permutation_orders_path: core/run/auxiliary/tpcds/single_user/permutation_orders/
   supports_time_travel: true
 # Execution of TPC-DS data maintenance queries (Delta)
 - id: data_maintenance_delta
@@ -211,7 +211,7 @@ task_templates:
   - core/run/spark-3.3.1/scripts/tpcds/data_maintenance/LF_SS.sql
   - core/run/spark-3.3.1/scripts/tpcds/data_maintenance/LF_WR.sql
   - core/run/spark-3.3.1/scripts/tpcds/data_maintenance/LF_WS.sql
-  parameter_values_file: run/auxiliary/tpcds/data_maintenance/parameter_values.dat
+  parameter_values_file: core/run/auxiliary/tpcds/data_maintenance/parameter_values.dat
 # Execution of TPC-DS data maintenance queries (Iceberg)
 - id: data_maintenance_iceberg
   files:
@@ -226,7 +226,7 @@ task_templates:
   - core/run/spark-3.3.1/scripts/tpcds/data_maintenance/LF_SS.sql
   - core/run/spark-3.3.1/scripts/tpcds/data_maintenance/LF_WR.sql
   - core/run/spark-3.3.1/scripts/tpcds/data_maintenance/LF_WS.sql
-  parameter_values_file: run/auxiliary/tpcds/data_maintenance/parameter_values.dat
+  parameter_values_file: core/run/auxiliary/tpcds/data_maintenance/parameter_values.dat
 # Execution of TPC-DS data maintenance queries (Hudi)
 - id: data_maintenance_hudi
   files:
@@ -241,7 +241,7 @@ task_templates:
   - core/run/spark-3.3.1/scripts/tpcds/data_maintenance/LF_SS.sql
   - core/run/spark-3.3.1/scripts/tpcds/data_maintenance/LF_WR.sql
   - core/run/spark-3.3.1/scripts/tpcds/data_maintenance/LF_WS.sql
-  parameter_values_file: run/auxiliary/tpcds/data_maintenance/parameter_values.dat
+  parameter_values_file: core/run/auxiliary/tpcds/data_maintenance/parameter_values.dat
 # Execution of optimize on all benchmark tables (Delta)
 - id: optimize_delta
   files:
@@ -526,4 +526,4 @@ task_templates:
   - core/run/spark-3.3.1/scripts/tpcds/data_maintenance_dependent/LF_WS_2.sql
   - core/run/spark-3.3.1/scripts/tpcds/data_maintenance_dependent/LF_WS_3.sql
   - core/run/spark-3.3.1/scripts/tpcds/data_maintenance_dependent/LF_WS_insert.sql
-  parameter_values_file: run/auxiliary/tpcds/data_maintenance/parameter_values.dat
+  parameter_values_file: core/run/auxiliary/tpcds/data_maintenance/parameter_values.dat

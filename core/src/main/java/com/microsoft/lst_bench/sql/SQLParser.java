@@ -27,9 +27,12 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /** Utility class with methods to parse files with a list of SQL statements. */
 public class SQLParser {
+  private static final Logger LOGGER = LoggerFactory.getLogger(SQLParser.class);
 
   private SQLParser() {
     // Defeat instantiation
@@ -40,6 +43,7 @@ public class SQLParser {
   }
 
   public static FileExec getStatements(File file) {
+    LOGGER.info("Parsing SQL file: {}", file.toPath());
     final List<StatementExec> statements = new ArrayList<>();
     try (BufferedReader br =
         new BufferedReader(

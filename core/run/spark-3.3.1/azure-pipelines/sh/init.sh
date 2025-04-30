@@ -16,8 +16,6 @@ export JAVA_HOME=$JDK_HOME
 export DATA_STORAGE_ACCOUNT=$2
 export DATA_STORAGE_ACCOUNT_SHARED_KEY=$3
 
-printenv
-
 # Install Hadoop
 rm -rf hadoop-3.3.1
 tar -xzf hadoop-3.3.1.tar.gz

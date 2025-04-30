@@ -42,9 +42,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import org.apache.commons.lang3.ObjectUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /** Factory class for creating benchmark objects from the input configuration. */
 public class BenchmarkObjectFactory {
+  private static final Logger LOGGER = LoggerFactory.getLogger(BenchmarkObjectFactory.class);
 
   private BenchmarkObjectFactory() {
     // Defeat instantiation
@@ -126,6 +129,7 @@ public class BenchmarkObjectFactory {
    */
   private static ImmutableWorkloadExec createWorkloadExec(
       Workload workload, InternalLibrary internalLibrary, ExperimentConfig experimentConfig) {
+    LOGGER.info("Creating workload execution for workload: {}", workload.getId());
     List<Phase> phases = workload.getPhases();
     Map<String, Integer> taskTemplateIdToPermuteOrderCounter = new HashMap<>();
     Map<String, Integer> taskTemplateIdToParameterValuesCounter = new HashMap<>();
@@ -149,6 +153,8 @@ public class BenchmarkObjectFactory {
       ExperimentConfig experimentConfig,
       Map<String, Integer> taskTemplateIdToPermuteOrderCounter,
       Map<String, Integer> taskTemplateIdToParameterValuesCounter) {
+    LOGGER.info("Creating phase execution for phase: {}", phase.getId());
+
     List<Session> sessions;
     if (phase.getSessions() != null) {
       sessions = phase.getSessions();
@@ -186,6 +192,8 @@ public class BenchmarkObjectFactory {
       ExperimentConfig experimentConfig,
       Map<String, Integer> taskTemplateIdToPermuteOrderCounter,
       Map<String, Integer> taskTemplateIdToParameterValuesCounter) {
+    LOGGER.info("Creating session execution for session: {}", sessionId);
+
     List<Task> tasks = getTasksFromSession(session, internalLibrary);
     List<TaskExec> taskExecList = new ArrayList<>();
     for (int j = 0; j < tasks.size(); j++) {
@@ -267,6 +275,8 @@ public class BenchmarkObjectFactory {
       ExperimentConfig experimentConfig,
       Map<String, Integer> taskTemplateIdToPermuteOrderCounter,
       Map<String, Integer> taskTemplateIdToParameterValuesCounter) {
+    LOGGER.info("Creating task execution for task: {}", taskId);
+
     if (task.getPreparedTaskId() != null) {
       Task preparedTask = internalLibrary.getIdToPrepatedTask().get(task.getPreparedTaskId());
       if (preparedTask == null) {
@@ -312,6 +322,7 @@ public class BenchmarkObjectFactory {
       ExperimentConfig experimentConfig,
       Map<String, Integer> taskTemplateIdToPermuteOrderCounter,
       Map<String, Integer> taskTemplateIdToParameterValuesCounter) {
+    LOGGER.info("Creating file execution list for task template: {}", taskTemplate.getId());
     List<FileExec> files = new ArrayList<>();
     for (String file : taskTemplate.getFiles()) {
       files.add(SQLParser.getStatements(file));

@@ -18,7 +18,7 @@ cp $HOME/hostiplist $SPARK_HOME/conf/workers
 
 export HOSTS=$(<$HOME/hostiplist)
 
-for node in $HOSTS   ; do scp ~/.ssh/id_rsa* $node:~/.ssh/ ; done
+#for node in $HOSTS   ; do scp -o StrictHostKeyChecking=no ~/.ssh/id_rsa* $node:~/.ssh/ ; done
 
 # Push to environment
 echo "export HOSTS=\"${HOSTS}\"" >> env.sh
