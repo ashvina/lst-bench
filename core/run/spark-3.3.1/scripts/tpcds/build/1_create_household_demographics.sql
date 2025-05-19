@@ -8,7 +8,7 @@ CREATE
             hd_vehicle_count INT
         )
             USING ${table_format} OPTIONS(
-            PATH '${data_path}${experiment_start_time}/${repetition}/household_demographics/'
+            PATH '${data_path}household_demographics/'
         ) TBLPROPERTIES(
             'primaryKey' = 'hd_demo_sk' ${tblproperties_suffix}
         );

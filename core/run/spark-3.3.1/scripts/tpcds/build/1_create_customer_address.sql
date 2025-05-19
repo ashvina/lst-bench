@@ -19,7 +19,7 @@ CREATE
             ca_location_type VARCHAR(20)
         )
             USING ${table_format} OPTIONS(
-            PATH '${data_path}${experiment_start_time}/${repetition}/customer_address/'
+            PATH '${data_path}customer_address/'
         ) TBLPROPERTIES(
             'primaryKey' = 'ca_address_sk' ${tblproperties_suffix}
         );

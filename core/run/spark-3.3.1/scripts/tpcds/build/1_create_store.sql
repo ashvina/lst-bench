@@ -38,7 +38,7 @@ CREATE
             )
         )
             USING ${table_format} OPTIONS(
-            PATH '${data_path}${experiment_start_time}/${repetition}/store/'
+            PATH '${data_path}store/'
         ) TBLPROPERTIES(
             'primaryKey' = 's_store_sk' ${tblproperties_suffix}
         );

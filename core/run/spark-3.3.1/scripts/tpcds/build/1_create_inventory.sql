@@ -7,7 +7,7 @@ CREATE
             inv_date_sk INT
         )
             USING ${table_format} OPTIONS(
-            PATH '${data_path}${experiment_start_time}/${repetition}/inventory/'
+            PATH '${data_path}inventory/'
         ) PARTITIONED BY(inv_date_sk) TBLPROPERTIES(
             'primaryKey' = 'inv_date_sk,inv_item_sk,inv_warehouse_sk' ${tblproperties_suffix}
         );

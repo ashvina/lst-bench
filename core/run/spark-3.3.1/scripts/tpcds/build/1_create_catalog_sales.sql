@@ -82,7 +82,7 @@ CREATE
             cs_sold_date_sk INT
         )
             USING ${table_format} OPTIONS(
-            PATH '${data_path}${experiment_start_time}/${repetition}/catalog_sales/'
+            PATH '${data_path}catalog_sales/'
         ) PARTITIONED BY(cs_sold_date_sk) TBLPROPERTIES(
             'primaryKey' = 'cs_item_sk,cs_order_number' ${tblproperties_suffix}
         );

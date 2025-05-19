@@ -13,7 +13,7 @@ CREATE
             t_meal_time VARCHAR(20)
         )
             USING ${table_format} OPTIONS(
-            PATH '${data_path}${experiment_start_time}/${repetition}/time_dim/'
+            PATH '${data_path}time_dim/'
         ) TBLPROPERTIES(
             'primaryKey' = 't_time_sk' ${tblproperties_suffix}
         );

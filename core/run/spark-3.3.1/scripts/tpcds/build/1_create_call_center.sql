@@ -40,7 +40,7 @@ CREATE
             )
         )
             USING ${table_format} OPTIONS(
-            PATH '${data_path}${experiment_start_time}/${repetition}/call_center/'
+            PATH '${data_path}call_center/'
         ) TBLPROPERTIES(
             'primaryKey' = 'cc_call_center_sk' ${tblproperties_suffix}
         );

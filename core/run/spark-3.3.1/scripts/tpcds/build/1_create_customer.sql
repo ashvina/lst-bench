@@ -21,7 +21,7 @@ CREATE
             c_last_review_date_sk VARCHAR(10)
         )
             USING ${table_format} OPTIONS(
-            PATH '${data_path}${experiment_start_time}/${repetition}/customer/'
+            PATH '${data_path}customer/'
         ) TBLPROPERTIES(
             'primaryKey' = 'c_customer_sk' ${tblproperties_suffix}
         );

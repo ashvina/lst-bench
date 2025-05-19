@@ -12,7 +12,7 @@ CREATE
             cp_type VARCHAR(100)
         )
             USING ${table_format} OPTIONS(
-            PATH '${data_path}${experiment_start_time}/${repetition}/catalog_page/'
+            PATH '${data_path}catalog_page/'
         ) TBLPROPERTIES(
             'primaryKey' = 'cp_catalog_page_sk' ${tblproperties_suffix}
         );

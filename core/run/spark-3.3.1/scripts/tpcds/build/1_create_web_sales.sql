@@ -82,7 +82,7 @@ CREATE
             ws_sold_date_sk INT
         )
             USING ${table_format} OPTIONS(
-            PATH '${data_path}${experiment_start_time}/${repetition}/web_sales/'
+            PATH '${data_path}web_sales/'
         ) PARTITIONED BY(ws_sold_date_sk) TBLPROPERTIES(
             'primaryKey' = 'ws_item_sk,ws_order_number' ${tblproperties_suffix}
         );

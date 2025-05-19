@@ -17,7 +17,7 @@ CREATE
             wp_max_ad_count INT
         )
             USING ${table_format} OPTIONS(
-            PATH '${data_path}${experiment_start_time}/${repetition}/web_page/'
+            PATH '${data_path}web_page/'
         ) TBLPROPERTIES(
             'primaryKey' = 'wp_web_page_sk' ${tblproperties_suffix}
         );

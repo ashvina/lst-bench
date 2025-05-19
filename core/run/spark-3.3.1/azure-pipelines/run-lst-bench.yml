@@ -139,7 +139,7 @@ stages:
               chmod +x ~/lst-bench-0.1-SNAPSHOT/launcher.sh
 
   # Run LST-Bench (setup external tables)
-- stage: start_spark
+- stage: setup_external_tables
   jobs:
   - deployment: StartEngine
     displayName: "Starting Engine"

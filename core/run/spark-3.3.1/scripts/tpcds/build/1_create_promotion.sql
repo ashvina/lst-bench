@@ -25,7 +25,7 @@ CREATE
             p_discount_active VARCHAR(1)
         )
             USING ${table_format} OPTIONS(
-            PATH '${data_path}${experiment_start_time}/${repetition}/promotion/'
+            PATH '${data_path}promotion/'
         ) TBLPROPERTIES(
             'primaryKey' = 'p_promo_sk' ${tblproperties_suffix}
         );

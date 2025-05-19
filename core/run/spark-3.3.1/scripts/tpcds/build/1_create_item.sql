@@ -31,7 +31,7 @@ CREATE
             i_product_name VARCHAR(50)
         )
             USING ${table_format} OPTIONS(
-            PATH '${data_path}${experiment_start_time}/${repetition}/item/'
+            PATH '${data_path}item/'
         ) TBLPROPERTIES(
             'primaryKey' = 'i_item_sk' ${tblproperties_suffix}
         );

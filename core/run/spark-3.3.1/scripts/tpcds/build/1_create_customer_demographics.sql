@@ -12,7 +12,7 @@ CREATE
             cd_dep_college_count INT
         )
             USING ${table_format} OPTIONS(
-            PATH '${data_path}${experiment_start_time}/${repetition}/customer_demographics/'
+            PATH '${data_path}customer_demographics/'
         ) TBLPROPERTIES(
             'primaryKey' = 'cd_demo_sk' ${tblproperties_suffix}
         );

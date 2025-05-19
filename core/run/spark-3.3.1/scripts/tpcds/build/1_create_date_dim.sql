@@ -31,7 +31,7 @@ CREATE
             d_current_year VARCHAR(1)
         )
             USING ${table_format} OPTIONS(
-            PATH '${data_path}${experiment_start_time}/${repetition}/date_dim/'
+            PATH '${data_path}date_dim/'
         ) TBLPROPERTIES(
             'primaryKey' = 'd_date_sk' ${tblproperties_suffix}
         );

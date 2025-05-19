@@ -6,7 +6,7 @@ CREATE
             r_reason_desc VARCHAR(100)
         )
             USING ${table_format} OPTIONS(
-            PATH '${data_path}${experiment_start_time}/${repetition}/reason/'
+            PATH '${data_path}reason/'
         ) TBLPROPERTIES(
             'primaryKey' = 'r_reason_sk' ${tblproperties_suffix}
         );
