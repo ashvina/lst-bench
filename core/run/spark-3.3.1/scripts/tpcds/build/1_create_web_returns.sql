@@ -55,6 +55,6 @@ CREATE
         )
             USING ${table_format} OPTIONS(
             PATH '${data_path}web_returns/'
-        ) PARTITIONED BY(wr_returned_date_sk) TBLPROPERTIES(
+        ) TBLPROPERTIES(
             'primaryKey' = 'wr_item_sk,wr_order_number' ${tblproperties_suffix}
         );

@@ -58,6 +58,6 @@ CREATE
         )
             USING ${table_format} OPTIONS(
             PATH '${data_path}catalog_returns/'
-        ) PARTITIONED BY(cr_returned_date_sk) TBLPROPERTIES(
+        ) TBLPROPERTIES(
             'primaryKey' = 'cr_item_sk,cr_order_number' ${tblproperties_suffix}
         );

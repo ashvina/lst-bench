@@ -63,6 +63,6 @@ CREATE
         )
             USING ${table_format} OPTIONS(
             PATH '${data_path}store_sales/'
-        ) PARTITIONED BY(ss_sold_date_sk) TBLPROPERTIES(
+        ) TBLPROPERTIES(
             'primaryKey' = 'ss_item_sk,ss_ticket_number' ${tblproperties_suffix}
         );
