@@ -14,3 +14,4 @@ spark.kryoserializer.buffer.max                                               10
 spark.sql.parquet.compression.codec                                           gzip
 spark.hadoop.fs.azure.account.auth.type.${DATA_STORAGE_ACCOUNT}.dfs.core.windows.net SharedKey
 spark.hadoop.fs.azure.account.key.${DATA_STORAGE_ACCOUNT}.dfs.core.windows.net       ${DATA_STORAGE_ACCOUNT_SHARED_KEY}
+spark.local.dir                                                               /mnt/local-disk/spark
