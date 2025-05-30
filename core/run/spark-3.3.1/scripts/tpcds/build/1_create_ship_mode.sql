@@ -1,5 +1,5 @@
 CREATE
-    TABLE
+    TABLE IF NOT EXISTS
         ${catalog}.${database}.ship_mode(
             sm_ship_mode_sk INT,
             sm_ship_mode_id VARCHAR(16),

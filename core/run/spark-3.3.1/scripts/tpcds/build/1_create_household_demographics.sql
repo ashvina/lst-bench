@@ -1,5 +1,5 @@
 CREATE
-    TABLE
+    TABLE IF NOT EXISTS
         ${catalog}.${database}.household_demographics(
             hd_demo_sk INT,
             hd_income_band_sk INT,

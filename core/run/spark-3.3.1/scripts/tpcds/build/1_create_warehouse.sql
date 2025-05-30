@@ -1,5 +1,5 @@
 CREATE
-    TABLE
+    TABLE IF NOT EXISTS
         ${catalog}.${database}.warehouse(
             w_warehouse_sk INT,
             w_warehouse_id VARCHAR(16),

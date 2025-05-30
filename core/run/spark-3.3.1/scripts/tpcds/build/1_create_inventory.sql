@@ -1,5 +1,5 @@
 CREATE
-    TABLE
+    TABLE IF NOT EXISTS
         ${catalog}.${database}.inventory(
             inv_item_sk INT,
             inv_warehouse_sk INT,

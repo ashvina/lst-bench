@@ -1,5 +1,5 @@
 CREATE
-    TABLE
+    TABLE IF NOT EXISTS
         ${catalog}.${database}.promotion(
             p_promo_sk INT,
             p_promo_id VARCHAR(16),

@@ -1,5 +1,5 @@
 CREATE
-    TABLE
+    TABLE IF NOT EXISTS
         ${catalog}.${database}.web_returns(
             wr_returned_time_sk INT,
             wr_item_sk INT,

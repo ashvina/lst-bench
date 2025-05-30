@@ -1,5 +1,5 @@
 CREATE
-    TABLE
+    TABLE IF NOT EXISTS
         ${catalog}.${database}.date_dim(
             d_date_sk INT,
             d_date_id VARCHAR(16),

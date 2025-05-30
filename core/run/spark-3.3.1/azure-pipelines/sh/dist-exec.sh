@@ -18,6 +18,9 @@ for node in $HOSTS   ; do scp -o StrictHostKeyChecking=no ./spark-$SPARK_VERSION
 for node in $HOSTS   ; do scp -o StrictHostKeyChecking=no ./mount_data_disk.sh $node:~/$deploy_dir ; done
 for node in $HOSTS   ; do scp -o StrictHostKeyChecking=no *.template $node:~/$deploy_dir ; done
 for node in $HOSTS   ; do scp -o StrictHostKeyChecking=no $script_file $node:~/$deploy_dir ; done
+if [ -f "$HOME/iceberg-spark-runtime-custom.jar" ]; then
+    for node in $HOSTS ; do scp -o StrictHostKeyChecking=no "$HOME/iceberg-spark-runtime-custom.jar" $node:$HOME/ ; done
+fi
 
 for node in $HOSTS   ; do ssh -o StrictHostKeyChecking=no -t $node "sudo apt-get update" ; done
 for node in $HOSTS   ; do ssh -o StrictHostKeyChecking=no -t $node "sudo apt install -y $JDK_INSTALLER_NAME" ; done

@@ -1,5 +1,5 @@
 CREATE
-    TABLE
+    TABLE IF NOT EXISTS
         ${catalog}.${database}.item(
             i_item_sk INT,
             i_item_id VARCHAR(16),

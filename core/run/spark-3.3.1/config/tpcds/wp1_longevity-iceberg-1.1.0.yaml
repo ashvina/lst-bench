@@ -10,7 +10,7 @@ phases:
 - id: build
   sessions:
   - tasks:
-    - template_id: build
+    - template_id: build_create
 - id: single_user_1
   sessions:
   - tasks:

@@ -1,5 +1,5 @@
 CREATE
-    TABLE
+    TABLE IF NOT EXISTS
         ${catalog}.${database}.customer_address(
             ca_address_sk INT,
             ca_address_id VARCHAR(16),

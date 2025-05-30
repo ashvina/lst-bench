@@ -1,5 +1,5 @@
 CREATE
-    TABLE
+    TABLE IF NOT EXISTS
         ${catalog}.${database}.customer_demographics(
             cd_demo_sk INT,
             cd_gender VARCHAR(1),

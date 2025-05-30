@@ -1,5 +1,5 @@
 CREATE
-    TABLE
+    TABLE IF NOT EXISTS
         ${catalog}.${database}.call_center(
             cc_call_center_sk INT,
             cc_call_center_id VARCHAR(16),

@@ -23,7 +23,8 @@ ln -sf $(pwd)/hadoop-3.3.1 $HADOOP_HOME
 
 # Install Spark
 rm -rf spark-$SPARK_VERSION-bin-hadoop3
-tar -xf spark-$SPARK_VERSION-bin-hadoop3.tgz
+mkdir spark-$SPARK_VERSION-bin-hadoop3
+tar -xf spark-$SPARK_VERSION-bin-hadoop3.tgz --strip-components=1 -C spark-$SPARK_VERSION-bin-hadoop3
 ln -sf $(pwd)/spark-$SPARK_VERSION-bin-hadoop3 $SPARK_HOME
 
 # Configure Spark

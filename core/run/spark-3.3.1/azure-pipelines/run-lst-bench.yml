@@ -109,8 +109,7 @@ stages:
               cp $(Pipeline.Workspace)/lst-bench-0.1-SNAPSHOT/core/run/spark-$(SPARK_VERSION)/azure-pipelines/sh/* ~/spark-$(SPARK_VERSION)/
               cd ~/spark-$(SPARK_VERSION)
               chmod +x ./*
-              wget -nv -N https://archive.apache.org/dist/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz
-              wget -nv -N https://archive.apache.org/dist/spark/spark-$SPARK_VERSION/spark-$SPARK_VERSION-bin-hadoop3.tgz
+              ./download_dependencies.sh
               spark_head_node=$(ip addr show eth0 | sed -n 's/ *inet [^0-9]*\([0-9\.]\+\).*/\1/p')
               ./init.sh "${spark_head_node}" "$(data_storage_account)" "$(data_storage_account_shared_key)"
               ./dist-setup.sh

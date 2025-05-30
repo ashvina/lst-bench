@@ -1,5 +1,5 @@
 CREATE
-    TABLE
+    TABLE IF NOT EXISTS
         ${catalog}.${database}.store(
             s_store_sk INT,
             s_store_id VARCHAR(16),

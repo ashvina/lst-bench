@@ -1,5 +1,5 @@
 CREATE
-    TABLE
+    TABLE IF NOT EXISTS
         ${catalog}.${database}.store_sales(
             ss_sold_time_sk INT,
             ss_item_sk INT,

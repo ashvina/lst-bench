@@ -1,5 +1,5 @@
 CREATE
-    TABLE
+    TABLE IF NOT EXISTS
         ${catalog}.${database}.catalog_page(
             cp_catalog_page_sk INT,
             cp_catalog_page_id VARCHAR(16),

@@ -1,5 +1,5 @@
 CREATE
-    TABLE
+    TABLE IF NOT EXISTS
         ${catalog}.${database}.time_dim(
             t_time_sk INT,
             t_time_id VARCHAR(16),

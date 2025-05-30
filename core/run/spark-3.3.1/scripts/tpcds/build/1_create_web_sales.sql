@@ -1,5 +1,5 @@
 CREATE
-    TABLE
+    TABLE IF NOT EXISTS
         ${catalog}.${database}.web_sales(
             ws_sold_time_sk INT,
             ws_ship_date_sk INT,

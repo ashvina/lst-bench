@@ -1,5 +1,5 @@
 CREATE
-    TABLE
+    TABLE IF NOT EXISTS
         ${catalog}.${database}.web_site(
             web_site_sk INT,
             web_site_id VARCHAR(16),

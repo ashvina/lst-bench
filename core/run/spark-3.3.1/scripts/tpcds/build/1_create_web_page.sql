@@ -1,5 +1,5 @@
 CREATE
-    TABLE
+    TABLE IF NOT EXISTS
         ${catalog}.${database}.web_page(
             wp_web_page_sk INT,
             wp_web_page_id VARCHAR(16),
