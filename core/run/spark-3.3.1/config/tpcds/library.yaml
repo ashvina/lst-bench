@@ -138,7 +138,6 @@ task_templates:
   - core/run/spark-3.3.1/scripts/tpcds/single_user/query38.sql
   - core/run/spark-3.3.1/scripts/tpcds/single_user/query39.sql
   - core/run/spark-3.3.1/scripts/tpcds/single_user/query40.sql
-  - core/run/spark-3.3.1/scripts/tpcds/single_user/query41.sql
   - core/run/spark-3.3.1/scripts/tpcds/single_user/query42.sql
   - core/run/spark-3.3.1/scripts/tpcds/single_user/query43.sql
   - core/run/spark-3.3.1/scripts/tpcds/single_user/query44.sql
@@ -192,7 +191,6 @@ task_templates:
   - core/run/spark-3.3.1/scripts/tpcds/single_user/query92.sql
   - core/run/spark-3.3.1/scripts/tpcds/single_user/query93.sql
   - core/run/spark-3.3.1/scripts/tpcds/single_user/query94.sql
-  - core/run/spark-3.3.1/scripts/tpcds/single_user/query95.sql
   - core/run/spark-3.3.1/scripts/tpcds/single_user/query96.sql
   - core/run/spark-3.3.1/scripts/tpcds/single_user/query97.sql
   - core/run/spark-3.3.1/scripts/tpcds/single_user/query98.sql

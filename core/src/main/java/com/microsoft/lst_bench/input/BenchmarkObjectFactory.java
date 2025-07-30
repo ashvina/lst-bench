@@ -360,6 +360,13 @@ public class BenchmarkObjectFactory {
         FileParser.getPermutationOrder(taskTemplate.getPermutationOrdersDirectory(), counter);
     List<FileExec> sortedFiles = new ArrayList<>();
     for (String fileId : permutationOrder) {
+      if (!idToFile.containsKey(fileId)) {
+        LOGGER.info(
+            "File ID '{}' not found in task template '{}'. Skipping.",
+            fileId,
+            taskTemplate.getId());
+        continue;
+      }
       sortedFiles.add(idToFile.get(fileId));
     }
     return sortedFiles;

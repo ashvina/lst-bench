@@ -41,9 +41,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.StringTokenizer;
+import org.slf4j.LoggerFactory;
 
 /** Utility class with methods to parse auxiliary files for the benchmark. */
 public class FileParser {
+  private static final org.slf4j.Logger LOGGER =
+      LoggerFactory.getLogger(FileParser.class.getName());
 
   private static final ObjectMapper YAML_MAPPER = new YAMLMapper();
   private static final String SCHEMAS_PATH =
@@ -65,6 +68,8 @@ public class FileParser {
           "Cannot find permutation order file with index: " + counter);
     }
     File file = files[counter];
+    LOGGER.info("Reading permutation order from file: {}", file.getAbsolutePath());
+
     List<String> permutationOrder = new ArrayList<>();
     try (BufferedReader br =
         new BufferedReader(
